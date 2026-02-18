@@ -47,6 +47,7 @@
 - [Runtime dependencies, e.g., Python 3.9+, CUDA 12.0+, Java 11+]
 - [Container runtime, e.g., Singularity 3.8+ / Apptainer 1.0+] (if containerized)
 - [Window manager, e.g., XFCE, Fluxbox] (if VNC-based Batch Connect app)
+- [Operating System, e.g., Rocky9/RHEL9, Ubuntu]
 
 ### Open OnDemand
 
@@ -59,7 +60,9 @@
 - [TurboVNC, VirtualGL] (for GPU-accelerated rendering)
 - [Database or dataset paths] (if the app needs reference data)
 
-## Installation
+## App Installation
+
+Please see the [References section](#software-installation) below for instructions on how to install the software that is launched by this App.
 
 ### 1. Clone the repository
 
@@ -189,6 +192,18 @@ This app is part of the [OOD Appverse](https://ondemand.connectci.org/affinity-g
 
 - [Software Name](https://example.com) — the application launched by this OOD app
 - [Open OnDemand](https://openondemand.org/) — the HPC portal framework
+
+### Software Installation
+
+In this optional section you can include details of how to install the underlying software that is launched by this app. For example, include information about Blender if you are publishing a Blender Batch Connect App. You could potentially include the following:
+
+* Steps on how to install the software from source, including critical dependencies
+* Steps on how to install and enable a Python environment with the software
+* A link to container orchestration files that can reproduce a container from scratch
+* A link to a pre-existing container that can be downloaded
+* Some general info on how to obtain and configure the software, especially if it is distributed as binaries and/or is commercial or proprietary software
+
+If this documentation is too large or unwieldy, consider adding it to a separate markdown file and linking it here.
 
 ## License
 
