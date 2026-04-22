@@ -82,37 +82,9 @@ git checkout v1.0.0
 ### 2. Configure for your site
 
 <!-- Point deployers to the ONE place they need to edit. -->
+#### form.yml Attributes
 
 Edit `form.yml` and update these values for your cluster:
-
-| Attribute | Default | Change to |
-|-----------|---------|-----------|
-| `cluster` | `"my_cluster"` | Your cluster name |
-| `modules` | `"software/1.0"` | Module name on your system |
-| `partition` | `"batch"` | Default partition/queue |
-
-<!-- Passenger apps: describe any config files, environment setup, or bundle install steps. -->
-<!-- If there are additional config files, list them too. -->
-
-### 3. Verify
-
-<!-- Batch Connect: -->
-No OOD restart is needed (Batch Connect apps are detected automatically). Visit your OOD dashboard and look for **[App Name]** under **Interactive Apps > [Category]**.
-
-<!-- Passenger: -->
-<!-- Restart the app from the OOD developer dashboard, or restart the PUN. Visit your OOD dashboard and navigate to [App URL]. -->
-
-## Configuration
-
-<!-- Document ALL site-specific values and where they live. -->
-<!-- This is the most important section for deployers at other sites. -->
-
-<!-- Batch Connect apps: document form.yml attributes -->
-<!-- Passenger apps: document config files, environment variables, or database setup -->
-
-### form.yml attributes
-
-<!-- Delete this subsection if not a Batch Connect app -->
 
 | Attribute | Description | Default |
 |-----------|-------------|---------|
@@ -123,7 +95,16 @@ No OOD restart is needed (Batch Connect apps are detected automatically). Visit 
 | `partition` | Default scheduler partition | `"batch"` |
 | `memory` | Memory per job (GB) | `8` |
 
-### Environment variables
+#### manifest.yml Attributes
+
+Edit `manifest.yml` and update these values for your organization:
+
+| Attribute | Change to |
+|-----------|-----------|
+| `description` | Your cluster and your documentation |
+
+
+#### Environment variables
 
 <!-- Only include this section if your scripts expect variables beyond what OOD provides. -->
 
@@ -131,6 +112,30 @@ No OOD restart is needed (Batch Connect apps are detected automatically). Visit 
 |----------|----------|-------------|
 | `SOFTWARE_DB_PATH` | Yes | Path to reference database directory |
 | `SINGULARITY_IMAGE` | No | Override default container image path |
+
+<!-- Passenger apps: describe any config files, environment setup, or bundle install steps. -->
+<!-- If there are additional config files, list them too. -->
+
+<!-- Passenger: -->
+<!-- Restart the app from the OOD developer dashboard, or restart the PUN. Visit your OOD dashboard and navigate to [App URL]. -->
+
+
+<!-- Document ALL site-specific values and where they live. -->
+<!-- This is the most important section for deployers at other sites. -->
+
+<!-- Batch Connect apps: document form.yml attributes -->
+<!-- Passenger apps: document config files, environment variables, or database setup -->
+
+
+
+
+
+
+### 3. Verify
+
+<!-- Batch Connect: -->
+No OOD restart is needed (Batch Connect apps are detected automatically). Visit your OOD dashboard and look for **[App Name]** under **Interactive Apps > [Category]**.
+
 
 ## Troubleshooting
 
