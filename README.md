@@ -91,13 +91,15 @@ Edit `form.yml` and update these values for your cluster:
 | `modules` | `"software/1.0"` | Module name on your system |
 | `partition` | `"batch"` | Default partition/queue |
 
+Edit `manifest.yml` and update these values for your organization:
+
+| Attribute | Change to |
+|-----------|-----------|
+| `description` | Your cluster and your documentation |
+
+
 <!-- Passenger apps: describe any config files, environment setup, or bundle install steps. -->
 <!-- If there are additional config files, list them too. -->
-
-### 3. Verify
-
-<!-- Batch Connect: -->
-No OOD restart is needed (Batch Connect apps are detected automatically). Visit your OOD dashboard and look for **[App Name]** under **Interactive Apps > [Category]**.
 
 <!-- Passenger: -->
 <!-- Restart the app from the OOD developer dashboard, or restart the PUN. Visit your OOD dashboard and navigate to [App URL]. -->
@@ -131,6 +133,13 @@ No OOD restart is needed (Batch Connect apps are detected automatically). Visit 
 |----------|----------|-------------|
 | `SOFTWARE_DB_PATH` | Yes | Path to reference database directory |
 | `SINGULARITY_IMAGE` | No | Override default container image path |
+
+
+### 3. Verify
+
+<!-- Batch Connect: -->
+No OOD restart is needed (Batch Connect apps are detected automatically). Visit your OOD dashboard and look for **[App Name]** under **Interactive Apps > [Category]**.
+
 
 ## Troubleshooting
 
