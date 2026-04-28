@@ -1,4 +1,4 @@
-# [Application Name]
+# [APPLICATION_NAME]
 
 ## Overview
 
@@ -6,13 +6,13 @@
 <!-- Pick the app type that matches yours: -->
 
 <!-- Batch Connect: -->
-[Application Name] is an Open OnDemand Batch Connect app that launches [software name and version] as an interactive [desktop / web server / notebook] session on HPC clusters. It is designed for [researchers / students / etc.] who need [brief use case].
+[APPLICATION_NAME] is an Open OnDemand Batch Connect app that launches [software name and version] as an interactive [desktop / web server / notebook] session on HPC clusters. It is designed for [researchers / students / etc.] who need [brief use case].
 
 <!-- Passenger: -->
-<!-- [Application Name] is an Open OnDemand Passenger app that provides [web-based tool / service] for [audience]. -->
+<!-- [APPLICATION_NAME] is an Open OnDemand Passenger app that provides [web-based tool / service] for [audience]. -->
 
 <!-- Widget / Dashboard: -->
-<!-- [Application Name] is an Open OnDemand [widget / dashboard] that [what it does] within the OOD dashboard. -->
+<!-- [APPLICATION_NAME] is an Open OnDemand [widget / dashboard] that [what it does] within the OOD dashboard. -->
 
 <!-- If this app is for sysadmins rather than end users, say so here. -->
 <!-- Note whether installation requires root permissions. -->
@@ -84,16 +84,22 @@ git checkout v1.0.0
 <!-- Point deployers to the ONE place they need to edit. -->
 #### form.yml Attributes
 
-Edit `form.yml` and update these values for your cluster:
+Edit `form.yml` and update these values for your cluster.
 
-| Attribute | Description | Default |
-|-----------|-------------|---------|
-| `cluster` | Target cluster ID | `"my_cluster"` |
-| `modules` | Module to load on compute node | `"software/1.0"` |
-| `bc_num_hours` | Maximum wall time (hours) | `4` |
-| `bc_num_slots` | Number of cores | `1` |
-| `partition` | Default scheduler partition | `"batch"` |
-| `memory` | Memory per job (GB) | `8` |
+<!--
+Replace [SITE_NAME] with your institution (e.g., "FASRC default", "OSC default").
+The four-column shape helps deployers see both what your site shipped and what
+they should swap in.
+-->
+
+| Attribute | Description | [SITE_NAME] default | Change to |
+|-----------|-------------|---------------------|-----------|
+| `cluster` | Target cluster ID | `"my_cluster"` | Your cluster name |
+| `modules` | Module to load on compute node | `"software/1.0"` | Module name on your system |
+| `bc_num_hours` | Maximum wall time (hours) | `4` | Your preferred default time |
+| `bc_num_slots` | Number of cores | `1` | Your preferred default cores |
+| `partition` | Default scheduler partition | `"batch"` | Your preferred partition |
+| `memory` | Memory per job (GB) | `8` | Your preferred memory allocation |
 
 #### manifest.yml Attributes
 
@@ -117,7 +123,7 @@ Edit `manifest.yml` and update these values for your organization:
 <!-- If there are additional config files, list them too. -->
 
 <!-- Passenger: -->
-<!-- Restart the app from the OOD developer dashboard, or restart the PUN. Visit your OOD dashboard and navigate to [App URL]. -->
+<!-- Restart the app from the OOD developer dashboard, or restart the PUN. Visit your OOD dashboard and navigate to [APP_URL]. -->
 
 
 <!-- Document ALL site-specific values and where they live. -->
@@ -134,7 +140,7 @@ Edit `manifest.yml` and update these values for your organization:
 ### 3. Verify
 
 <!-- Batch Connect: -->
-No OOD restart is needed (Batch Connect apps are detected automatically). Visit your OOD dashboard and look for **[App Name]** under **Interactive Apps > [Category]**.
+No OOD restart is needed (Batch Connect apps are detected automatically). Visit your OOD dashboard and look for **[APP_NAME]** under **Interactive Apps > [CATEGORY]**.
 
 
 ## Troubleshooting
@@ -157,11 +163,14 @@ The app may need more time to start. Increase the connection timeout or check th
 
 ## Testing
 
-<!-- Where has this app been deployed and verified? -->
+<!-- Where has this app been deployed and verified? Add a row per verified version. -->
 
-| Site | OOD Version | Scheduler | Status |
-|------|-------------|-----------|--------|
-| [Your Institution] | 3.1 | Slurm 23.02 | Tested |
+| Site | Operating System* | OOD Version | Scheduler | Status |
+|------|-------------------|-------------|-----------|--------|
+| [YOUR_INSTITUTION] | Rocky 8.10 | 3.1 | Slurm 23.02 | Tested |
+
+> [!NOTE]
+> \*Operating system of compute nodes
 
 <!-- How can a deployer verify it works? -->
 
@@ -195,7 +204,7 @@ This app is part of the [OOD Appverse](https://ondemand.connectci.org/affinity-g
 
 <!-- Credit upstream projects and any code you borrowed. -->
 
-- [Software Name](https://example.com) — the application launched by this OOD app
+- [SOFTWARE_NAME](https://example.com) — the application launched by this OOD app
 - [Open OnDemand](https://openondemand.org/) — the HPC portal framework
 
 ### Software Installation
@@ -223,4 +232,4 @@ If this documentation is too large or unwieldy, consider adding it to a separate
 <!-- Funding, institutional support, collaborators. -->
 <!-- Replace with your own funding information. -->
 
-This work is supported by [funding agency] award number [award number].
+This work is supported by [FUNDING_AGENCY] award number [AWARD_NUMBER].
